@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;700;900&display=swap");
+//VARIABLES
+$color__blue--pale: hsl(225, 100%, 94%);
+$color__blue--very-pale: hsl(225, 100%, 98%);
+$color__blue--desaturated: hsl(224, 23%, 55%);
+$color__blue--dark: hsl(223, 47%, 23%);
+$color__blue--bright: hsl(245, 75%, 52%);
+$color__blue--bright-shade: hsl(245, 74%, 62%);
+$color__black: #000;
+
+//UTITLITY CLASSES
+
+.margin-bottom--x-small {
+  margin-bottom: 1.6rem;
+}
+
+.margin-bottom--small {
+  margin-bottom: 2.4rem;
+}
+
+@mixin flex {
+  display: flex;
+}
+
+@mixin flex-direction--column {
+  flex-direction: column;
+}
+
+@mixin flex__center--hv {
+  // to center both horizontally and vertically
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex__justify-content--center {
+  justify-content: center;
+}
+
+@mixin flex__align-items--center {
+  align-items: center;
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: $color__blue--pale;
+
+  //To implement background pattern
+  background-image: url(../images/pattern-background-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  font-family: "Red Hat Display", sans-serif;
+  height: 100vh;
+
+  // To help center the container element inside the body element both horizontally and vertically.
+  @include flex;
+  @include flex__center--hv;
+}
+
+.container {
+  max-width: 30rem;
+
+  .order-summary {
+    border-radius: 1.4rem;
+    background-color: #fff;
+    overflow: hidden;
+
+    &__image {
+      // The width of the image will be the width of the container which is 30rem = 300px.
+      width: 100%;
+
+      /*
+      you can either implement below two lines of code in the image element to make the border-radius
+      of the image to be consistent with the "order-summary" element
+      border-top-right-radius: 1.4rem;
+      border-top-left-radius: 1.4rem;
+                                     or
+      use "overflow:hidden" on the order-summary element so that anything
+      that overflows the order-summary element will be cut off (this is what i done for simplicity)
+      
+      */
+    }
+
+    &__info {
+      padding: 3.2rem;
+      text-align: center;
+
+      @include flex;
+      @include flex-direction--column;
+      @include flex__justify-content--center;
+
+      &--heading {
+        color: $color__blue--dark;
+        font-size: 1.8rem;
+        font-weight: 900;
+      }
+
+      &--description {
+        color: $color__blue--desaturated;
+        font-size: 1.3rem;
+        font-weight: 500;
+        padding: 0 0.8rem;
+      }
+    }
+
+    &__plan-box {
+      background-color: $color__blue--very-pale;
+      border-radius: 7px;
+      padding: 1.6rem;
+
+      @include flex;
+      @include flex__align-items--center;
+      gap: 1.6rem;
+    }
+
+    &__plan-image {
+      width: 3.2rem;
+      height: 100%;
+    }
+
+    &__subscription {
+      font-size: 1.2rem;
+
+      @include flex;
+      @include flex-direction--column;
+      @include flex__align-items--center;
+      gap: 0.4rem;
+
+      &--name {
+        color: $color__blue--dark;
+        font-weight: 900;
+      }
+
+      &--price {
+        color: $color__blue--desaturated;
+        font-weight: 500;
+      }
+    }
+
+    &__change-plan-link:link,
+    &__change-plan-link:visited {
+      color: $color__blue--bright;
+      font-weight: 500;
+      margin-left: auto;
+
+      &:hover,
+      &:active {
+        color: $color__blue--bright-shade;
+        text-decoration: none;
+      }
+    }
+
+    &__button:link,
+    &__button:visited {
+      border-radius: 0.7rem;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 1rem;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    &__button--payment:link,
+    &__button--payment:visited {
+      background-color: $color__blue--bright;
+      box-shadow: 0 1.8rem 2rem rgba($color__black, 0.15);
+
+      &:hover,
+      &:active {
+        background-color: $color__blue--bright-shade;
+        color: $color__blue--pale;
+      }
+    }
+
+    &__button--cancel:link,
+    &__button--cancel:visited {
+      color: $color__blue--desaturated;
+
+      &:hover,
+      &:active {
+        color: $color__blue--dark;
+      }
+    }
+  }
+}
+
+//Media Query for mobile below 400px
+@media (max-width: 25em) {
+  body {
+    background-color: $color__blue--pale;
+    background-image: url(../images/pattern-background-mobile.svg);
+  }
+}

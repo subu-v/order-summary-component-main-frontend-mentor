@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;700;900&display=swap");
+.margin-bottom--x-small {
+  margin-bottom: 1.6rem;
+}
+
+.margin-bottom--small {
+  margin-bottom: 2.4rem;
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #e0e8ff;
+  background-image: url(../images/pattern-background-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: "Red Hat Display", sans-serif;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container {
+  max-width: 30rem;
+}
+
+.container .order-summary {
+  border-radius: 1.4rem;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.container .order-summary__image {
+  width: 100%;
+  /*
+      you can either implement below two lines of code in the image element to make the border-radius
+      of the image to be consistent with the "order-summary" element
+      border-top-right-radius: 1.4rem;
+      border-top-left-radius: 1.4rem;
+                                     or
+      use "overflow:hidden" on the order-summary element so that anything
+      that overflows the order-summary element will be cut off (this is what i done for simplicity)
+      
+      */
+}
+
+.container .order-summary__info {
+  padding: 3.2rem;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .order-summary__info--heading {
+  color: #1f2f56;
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+
+.container .order-summary__info--description {
+  color: #7280a7;
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: 0 0.8rem;
+}
+
+.container .order-summary__plan-box {
+  background-color: #f5f7ff;
+  border-radius: 7px;
+  padding: 1.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.6rem;
+}
+
+.container .order-summary__plan-image {
+  width: 3.2rem;
+  height: 100%;
+}
+
+.container .order-summary__subscription {
+  font-size: 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.4rem;
+}
+
+.container .order-summary__subscription--name {
+  color: #1f2f56;
+  font-weight: 900;
+}
+
+.container .order-summary__subscription--price {
+  color: #7280a7;
+  font-weight: 500;
+}
+
+.container .order-summary__change-plan-link:link, .container .order-summary__change-plan-link:visited {
+  color: #3829e0;
+  font-weight: 500;
+  margin-left: auto;
+}
+
+.container .order-summary__change-plan-link:link:hover, .container .order-summary__change-plan-link:link:active, .container .order-summary__change-plan-link:visited:hover, .container .order-summary__change-plan-link:visited:active {
+  color: #6256e6;
+  text-decoration: none;
+}
+
+.container .order-summary__button:link, .container .order-summary__button:visited {
+  border-radius: 0.7rem;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 1rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.container .order-summary__button--payment:link, .container .order-summary__button--payment:visited {
+  background-color: #3829e0;
+  -webkit-box-shadow: 0 1.8rem 2rem rgba(0, 0, 0, 0.15);
+          box-shadow: 0 1.8rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.container .order-summary__button--payment:link:hover, .container .order-summary__button--payment:link:active, .container .order-summary__button--payment:visited:hover, .container .order-summary__button--payment:visited:active {
+  background-color: #6256e6;
+  color: #e0e8ff;
+}
+
+.container .order-summary__button--cancel:link, .container .order-summary__button--cancel:visited {
+  color: #7280a7;
+}
+
+.container .order-summary__button--cancel:link:hover, .container .order-summary__button--cancel:link:active, .container .order-summary__button--cancel:visited:hover, .container .order-summary__button--cancel:visited:active {
+  color: #1f2f56;
+}
+
+@media (max-width: 25em) {
+  body {
+    background-color: #e0e8ff;
+    background-image: url(../images/pattern-background-mobile.svg);
+  }
+}
